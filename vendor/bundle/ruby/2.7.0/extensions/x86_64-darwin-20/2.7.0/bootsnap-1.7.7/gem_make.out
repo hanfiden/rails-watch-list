@@ -1,0 +1,15 @@
+current directory: /Users/fidenhan/code/hanfiden/rails-watch-list/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.7/ext/bootsnap
+/Users/fidenhan/.rbenv/versions/2.7.3/bin/ruby -I /Users/fidenhan/.rbenv/versions/2.7.3/lib/ruby/2.7.0 -r ./siteconf20210812-22009-1pdca08.rb extconf.rb
+creating Makefile
+
+current directory: /Users/fidenhan/code/hanfiden/rails-watch-list/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.7/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/fidenhan/code/hanfiden/rails-watch-list/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.7/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/fidenhan/code/hanfiden/rails-watch-list/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.7/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20210812-22009-1ebv5jr/bootsnap
