@@ -1,0 +1,7 @@
+<div class="form-content">
+  <%= simple_form_for([@list, @bookmark]) do |f| %>
+    <%= f.association :movie %>
+    <%= f.input :comment %>
+    <%= f.submit 'Add movie', class: 'btn btn-success mb-3'%>
+  <% end %>
+</div>

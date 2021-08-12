@@ -2,6 +2,8 @@
   <h1><%= @list.name %></h1>
 </header>
 
+<%= link_to 'Add new movie', new_list_bookmark_path %>
+
 <div class="container m-auto" style="width: 80%">
   <div class="container d-flex justify-content-around mb-5 align-content-between">
     <% @list.bookmarks.each do |bookmark| %>
@@ -16,14 +18,6 @@
           </div>
         </div>
       </div>
-    <% end %>
-  </div>
-
-  <div class="form-content">
-    <%= simple_form_for([@list, @bookmark]) do |f| %>
-      <%= f.association :movie %>
-      <%= f.input :comment %>
-      <%= f.submit 'Add movie', class: 'btn btn-success mb-3'%>
     <% end %>
   </div>
 
