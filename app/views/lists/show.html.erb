@@ -12,7 +12,7 @@
           <h5 class="card-title"><%= bookmark.movie.title %></h5>
           <p class="card-text"><%= bookmark.movie.overview %></p>
           <div class="d-flex justify-content-between">
-            <p>❝ <i><%= bookmark.comment %></i></p>
+            <p>❝ <%= bookmark.comment %></p>
             <%= link_to '🗑️', bookmark_path(bookmark), method: :delete, data: { confirm: 'Are u sure ?' } %>
           </div>
         </div>
