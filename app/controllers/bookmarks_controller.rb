@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 class BookmarksController < ApplicationController
-  before_action :set_list, only: [:create]
+  before_action :set_list, only: [:new, :create]
 
   def new
-    @list = List.new
+    @bookmark = Bookmark.new
   end
 
   def create
@@ -13,7 +13,7 @@ class BookmarksController < ApplicationController
     if @bookmark.save
       redirect_to list_path(@list)
     else
-      render 'lists/show'
+      render :new
     end
   end
 

@@ -2,7 +2,7 @@
   <h1><%= @list.name %></h1>
 </header>
 
-<%= link_to 'Add new movie', new_list_bookmark_path %>
+<%= link_to 'Add new movie', new_list_bookmark_path(@list) %>
 
 <div class="container m-auto" style="width: 80%">
   <div class="container d-flex justify-content-around mb-5 align-content-between">
@@ -14,7 +14,7 @@
           <p class="card-text"><%= bookmark.movie.overview %></p>
           <div class="d-flex justify-content-between">
             <p>❝ <i><%= bookmark.comment %></i></p>
-            <%= link_to '🗑️', bookmark_path, method: :delete, data: { confirm: 'Are u sure ?' } %>
+            <%= link_to '🗑️', bookmark_path(bookmark), method: :delete, data: { confirm: 'Are u sure ?' } %>
           </div>
         </div>
       </div>
@@ -23,7 +23,7 @@
 
   <%= link_to "Delete", list_path(@list), method: :delete, data: { confirm: "Are you sure?" }, class:'text-danger' %>
   |
-  <%= link_to "Edit list", edit_list_path, class: 'text-warning' %>
+  <%= link_to "Rename list", edit_list_path, class: 'text-warning' %>
   |
   <%= link_to "Back to Lists", lists_path, class: 'text-secondary' %>
 </div>
