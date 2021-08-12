@@ -1,36 +1,35 @@
-<div class="container">
+<header>
   <h1><%= @list.name %></h1>
+</header>
 
-  <div class="container">
+<div class="container m-auto" style="width: 80%">
+  <div class="container d-flex justify-content-around mb-5 align-content-between">
     <% @list.bookmarks.each do |bookmark| %>
-      <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 21rem;">
         <img src="<%= bookmark.movie.poster_url %>" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title"><%= bookmark.movie.title %></h5>
           <p class="card-text"><%= bookmark.movie.overview %></p>
-          <p><%= bookmark.comment %></p>
-          <div class="btn">
+          <div class="d-flex justify-content-between">
+            <p>❝ <i><%= bookmark.comment %></i></p>
             <%= link_to '🗑️', bookmark_path, method: :delete, data: { confirm: 'Are u sure ?' } %>
           </div>
         </div>
-    <% end %>
       </div>
-        </div>
-    </div>
-
-    <div class="form-content">
-      <%= simple_form_for([@list, @bookmark]) do |f| %>
-        <%= f.association :movie %>
-        <%= f.input :comment %>
-        <%= f.submit 'Add movie'%>
-      <% end %>
-    </div>
+    <% end %>
   </div>
 
-  <%= link_to "Delete", list_path(@list), method: :delete, data: { confirm: "Are you sure?" } %>
-  |
-  <%= link_to "Edit list", edit_list_path %>
-  |
-  <%= link_to "Back to Lists", lists_path %>
+  <div class="form-content">
+    <%= simple_form_for([@list, @bookmark]) do |f| %>
+      <%= f.association :movie %>
+      <%= f.input :comment %>
+      <%= f.submit 'Add movie', class: 'btn btn-success mb-3'%>
+    <% end %>
+  </div>
 
+  <%= link_to "Delete", list_path(@list), method: :delete, data: { confirm: "Are you sure?" }, class:'text-danger' %>
+  |
+  <%= link_to "Edit list", edit_list_path, class: 'text-warning' %>
+  |
+  <%= link_to "Back to Lists", lists_path, class: 'text-secondary' %>
 </div>

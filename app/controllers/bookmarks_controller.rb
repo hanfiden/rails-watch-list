@@ -3,10 +3,14 @@
 class BookmarksController < ApplicationController
   before_action :set_list, only: [:create]
 
+  def new
+    @list = Bookmark.new
+  end
+
   def create
     @bookmark = Bookmark.new(params_bookmark)
     @bookmark.list = @list
-    if @bookmark.save!
+    if @bookmark.save
       redirect_to list_path(@list)
     else
       render 'lists/show'

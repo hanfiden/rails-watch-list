@@ -11,3 +11,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "lists";
+
+nav {
+  background-color: rgb(193, 240, 240);
+  position: sticky;
+}
