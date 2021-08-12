@@ -17,3 +17,10 @@ nav {
   background-color: rgb(193, 240, 240);
   position: sticky;
 }
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none !important;
+  }
+}

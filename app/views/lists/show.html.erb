@@ -2,12 +2,11 @@
   <h1><%= @list.name %></h1>
 </header>
 
-<%= link_to 'Add new movie', new_list_bookmark_path(@list) %>
-
-<div class="container m-auto" style="width: 80%">
-  <div class="container d-flex justify-content-around mb-5 align-content-between">
+<div class="container text-center">
+  <%= link_to '➕ Add new movie', new_list_bookmark_path(@list), class: 'mb-5 btn btn-primary' %>
+  <div class="row justify-content-center mb-5">
     <% @list.bookmarks.each do |bookmark| %>
-      <div class="card" style="width: 21rem;">
+      <div class="card col-12 col-md-4 col-lg-3 m-3">
         <img src="<%= bookmark.movie.poster_url %>" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title"><%= bookmark.movie.title %></h5>
@@ -21,9 +20,9 @@
     <% end %>
   </div>
 
-  <%= link_to "Delete", list_path(@list), method: :delete, data: { confirm: "Are you sure?" }, class:'text-danger' %>
+  <%= link_to "Delete list", list_path(@list), method: :delete, data: { confirm: "Are you sure?" }, class:'text-danger' %>
   |
   <%= link_to "Rename list", edit_list_path, class: 'text-warning' %>
   |
-  <%= link_to "Back to Lists", lists_path, class: 'text-secondary' %>
+  <%= link_to "Back to lists", lists_path, class: 'text-secondary' %>
 </div>
