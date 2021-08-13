@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "app_id": "app_93f183fe-8047-4d24-9813-4b2d93f35686",
+      "org_id": "user_5ea64feb-4f1d-4f2e-829b-56a2db6376a2",
+      "deploy_url": "https://push-n2-par-clevercloud-customers.services.clever-cloud.com/app_93f183fe-8047-4d24-9813-4b2d93f35686.git",
+      "name": "watch_list",
+      "alias": "watch_list"
+    }
+  ]
+}
