@@ -8,15 +8,14 @@
       <h3 class="mb-0">My Lists</h3>
       <%= link_to 'Create a movie list', new_list_path, class: 'btn btn-primary' %>
     </div>
-    <div class="row">
+
+    <div class="cards">
       <% @lists.each do |list| %>
-        <div class="co-12 colsm-6 col-md-4 mb-3">
-          <%= link_to list_path(list) do %>
-            <div class="card-category">
-              <%= list.name %>
-            </div>
-          <% end %>
-        </div>
+        <%= link_to list_path(list) do %>
+          <div class="card-category">
+            <%= list.name %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>

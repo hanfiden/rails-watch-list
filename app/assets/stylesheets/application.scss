@@ -12,14 +12,3 @@
 @import "components/index";
 @import "pages/index";
 @import "lists";
-
-nav {
-  background-color: rgb(228, 247, 247);
-}
-
-a {
-  text-decoration: none;
-  &:hover {
-    text-decoration: none !important;
-  }
-}
