@@ -18,7 +18,9 @@ nav {
 
 a {
   text-decoration: none;
+  opacity: .8;
   &:hover {
     text-decoration: none !important;
+    opacity: 1;
   }
 }

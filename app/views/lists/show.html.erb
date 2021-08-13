@@ -1,12 +1,18 @@
-<header>
-  <h1><%= @list.name %></h1>
-</header>
+<% if @list.photo.attached? %>
+  <div class="show-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>')">
+    <h1><%= @list.name %></h1>
+  </div>
+<% else %>
+  <div class="show-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1485846234645-a62644f84728?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2840&q=80')">
+    <h1><%= @list.name %></h1>
+  </div>
+<% end %>
 
 <div class="container text-center">
   <%= link_to '➕ Add new movie', new_list_bookmark_path(@list), class: 'mb-5 btn btn-primary' %>
   <div class="row justify-content-center mb-5">
     <% @list.bookmarks.each do |bookmark| %>
-      <div class="card col-12 col-md-4 col-lg-3 m-3">
+      <div class="card col-12 col-md-4 col-lg-3 m-3 pt-3">
         <img src="<%= bookmark.movie.poster_url %>" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title"><%= bookmark.movie.title %></h5>

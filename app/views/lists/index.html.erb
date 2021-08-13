@@ -12,9 +12,15 @@
     <div class="cards">
       <% @lists.each do |list| %>
         <%= link_to list_path(list) do %>
-          <div class="card-category">
-            <%= list.name %>
-          </div>
+          <% if list.photo.attached? %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')">
+              <%= list.name %>
+            </div>
+          <% else%>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1485846234645-a62644f84728?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2840&q=80')">
+              <%= list.name %>
+            </div>
+          <% end %>
         <% end %>
       <% end %>
     </div>

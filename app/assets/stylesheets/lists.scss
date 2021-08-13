@@ -18,3 +18,20 @@ header {
     font-size: 48px;
   }
 }
+
+.show-header {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: aliceblue;
+  text-shadow: 1px 1px 2px pink;
+  height: 500px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  h1 {
+    font-size: 48px;
+  }
+}

@@ -12,7 +12,9 @@
 
   <body>
     <nav class="d-flex justify-content-between py-3 px-5">
-      <%= link_to "Home", "/" %>
+      <%= link_to "/" do %>
+        <%= image_tag "logo.png", alt: "Movies", width: 105, height: 45 %>
+      <% end %>
       <%= link_to "➕ New List", new_list_path %>
     </nav>
     <%= yield %>
